@@ -1,0 +1,364 @@
+@font-face {
+    font-family: 'cafeFont0';
+    src: url(./fonts/Avenir-Next-LT-W04-Thin.ttf);
+}
+@font-face {
+    font-family: 'cafeFont1';
+    src: url(./fonts/meticula-bold.ttf);
+}
+
+:root {
+    --orange1: #ff5311;
+    --orange2: #ff7844;
+    --orange3: #ff9d77;
+    --black: #111;
+    --grey: #e6e6e6;
+    --white: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    background-color: var(--black);
+
+    font-family: 'cafeFont1';
+
+    font-size: calc(100vw/30); /* 1rem calculated dynamically */
+}
+
+/* ------------------------------ */
+/* ------- header section ------- */
+/* ------------------------------ */
+
+#header {
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo,
+#home,
+#menu,
+#contact {
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+
+    color: var(--orange2);
+}
+
+#home:hover,
+#menu:hover,
+#contact:hover {
+    font-size: 1.8rem;
+    text-decoration: underline;
+}
+
+/* ------------------------------- */
+/* ------- content section ------- */
+/* ------------------------------- */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: fit-content;
+    margin-bottom: 3rem;
+}
+
+#splash {
+    width: 100vw;
+    position: relative;
+}
+
+#splash img {
+    width: inherit; /* image does not command viewport */
+    filter: brightness(50%); 
+    height: calc(100vw - 20px);
+    max-height: 748px;
+    
+    object-fit: cover;
+    object-position: 0% 60%;
+    
+    position: relative;
+}
+
+.splashText1 {
+    position: absolute;
+    top: 0;
+    
+    text-align: center;
+    
+    
+    padding: 2rem;
+    
+    background-color: transparent;
+    
+    font-family: 'cafeFont0';
+    font-size: 2rem;
+    
+    color: var(--orange3);
+}
+
+.splashText2 {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    
+    text-align: center;
+    
+    
+    padding: 1rem;
+    
+    background-color: transparent;
+    
+    font-family: 'cafeFont0';
+    font-size: 2rem;
+    
+    color: var(--orange3);
+}
+
+/* styles for menu tab */
+
+#menuMain {
+    width: 100vw;
+}
+
+#menuMain *:not(.description){
+    width: inherit;
+}
+
+#foodMenu {
+    display: grid;
+
+    grid-auto-flow: row;
+    grid-auto-rows: 15rem;
+
+    gap: 3rem;
+
+    margin-bottom: 3rem;
+}
+
+#foodMenu *img {
+    object-fit: cover;
+    width: 100%;
+    height: inherit;
+
+}
+
+#foodMenu>div {
+    height: inherit;
+
+    overflow: hidden;
+}
+
+#drinkMenu {
+    display: grid;
+
+    grid-auto-flow: row;
+    grid-auto-rows: 15rem;
+
+    gap: 3rem;
+}
+
+#drinkMenu *img {
+    object-fit: cover;
+    width: 100%;
+    height: inherit;
+}
+
+#drinkMenu>div {
+    height: inherit;
+
+    overflow: hidden;
+}
+
+.menuItemContainer,
+.drinkItemContainer {
+    position: relative;
+}
+
+.description {
+    position: absolute;
+
+    width: 33vw;
+    max-width: 256px;
+
+    top: 1rem;
+    right: -10rem;
+    background-color: transparent;
+    
+    color: transparent;
+    font-family: 'cafeFont0';
+
+    font-size: 1rem;
+}
+
+.menuItemContainer:hover .description{
+    transition: all 0.5s ease-in;
+    right: 0.5rem;
+    color: #e6e6e6;
+}
+
+.menuItemContainer:hover img {
+    transition: all 0.5s ease-in;
+    filter: brightness(0.5);
+    transform: scale(1.2);
+}
+
+.drinkItemContainer:hover .description{
+    transition: all 0.5s ease-in;
+    right: 0.5rem;
+    color: #e6e6e6;
+}
+
+.drinkItemContainer:hover img {
+    transition: all 0.5s ease-in;
+    filter: brightness(0.5);
+    transform: scale(1.2);
+}
+
+.title {
+    color: #e6e6e6;
+
+    font-size: 1.5rem;
+
+    margin-top: 1rem;
+}
+
+.text {
+    color: #e6e6e6;
+
+    font-size: 0.8rem;
+}
+
+#gmapsIframe {
+    width: 80vw;
+    max-width: 614px;
+
+    height: 60vw;
+    max-height: 460px;
+
+    border: none;
+}
+
+form {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    gap: 1rem;
+}
+
+.partySize {
+    grid-column:1/ span 2;
+    grid-row: 1/ span 1;
+}
+
+.dateInput {
+    grid-column: 1/ span 1;
+    grid-row: 2/ span 1;
+}
+
+.timeInput {
+    grid-column: 2/ span 1;
+    grid-row: 2/ span 1;
+}
+
+form label {
+    color: #e6e6e6;
+
+    font-size: 0.8rem;
+}
+
+select {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6e6e6;
+
+    font-size: 0.8rem;
+}
+
+select:hover {
+    background-color: var(--orange3);
+    transition: all ease-in-out 0.2s;
+}
+
+form option {
+    background-color: #e6e6e6;
+
+    font-size: 0.8rem;
+}
+
+button {
+    background-color: var(--orange1);
+    color: var(--grey);
+    
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: var(--orange3);
+    color: var(--black);
+
+    transform: scale(1.05);
+    transition: all ease-in-out 0.2s;
+}
+
+/* ------------------------------ */
+/* ------- footer section ------- */
+/* ------------------------------ */
+
+#footer {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.socialMediaContainerDiv {
+    
+        display: flex;
+        justify-content: space-evenly;
+        
+        width: inherit;
+
+        padding-bottom: 2rem;
+}
+
+.socialMediaContainerDiv  img {
+    height: 2rem;
+    width: 2rem;
+    
+    background-color: var(--grey);
+}
+
+.socialMediaContainerDiv img:hover{
+    cursor: pointer;
+}
+
+.footerText {
+    color: var(--white);
+
+    font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 25px;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    body * {
+        max-width: 768px;
+
+    }
+}
